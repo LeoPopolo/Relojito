@@ -31,6 +31,19 @@ $(function(){
         $(".segundos").text(segundos);
         $(".meridiano").text(ampm);
 
+        var hoy = new Date();
+        var segundos = hoy.getSeconds();
+        var minutos = hoy.getMinutes();
+        var horas = hoy.getHours();
+    
+        var rotacionSegundos = segundos * 6;
+        var rotacionMinutos = minutos * 6;
+        var rotacionHoras = horas * 30;
+
+        $(".agujaGrande").css("transform", `rotate(${rotacionSegundos}deg)`);
+        $(".agujaMedia").css("transform", `rotate(${rotacionMinutos}deg)`);
+        $(".agujaChica").css("transform", `rotate(${rotacionHoras}deg)`);
+
     }, 100);
 
     $(".btnFondo").click(function(){
